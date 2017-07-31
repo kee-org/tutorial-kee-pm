@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+    <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     {{ .Hugo.Generator }}
+      {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
+      {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      {{ else }}
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      {{ end }}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href='{{ "dist/tutorial20.css" | absURL }}' rel='stylesheet' type="text/css" />
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+     {{ if .RSSLink }}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+      {{ end }}
+
+      {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
+      {{- template "_internal/opengraph.html" . -}}
+      {{- template "_internal/google_news.html" . -}}
+      {{- template "_internal/schema.html" . -}}
+      {{- template "_internal/twitter_cards.html" . -}}
+
+<script type="text/javascript">//<![CDATA[
+   document.write('<style type="text/css" title="default">.helpDetail, .helpLink, .keefoxState, .jsDisabled { display: none; }</style>');
+   //]]></script>
+
+      {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-11743867-3', 'keefox.org', {'siteSpeedSampleRate': 50});
+          ga('send', 'pageview');
+        </script>
+      {{ end }}
+  </head>
+
+  <body id="body">
+    <div id="container">
+
+	<div id="keefoxState-jsDisabled" class="jsDisabled">Javascript disabled. This website might work without Javascript but it will be pretty useless in many cases and probably just cause you to waste time unecessarilly so please enable Javascript and reload before proceding.</div>
+	<div id="keefoxState-connecting" class="keefoxState">Connecting to KeeFox. Please wait...</div>
+	<div id="keefoxState-not-firefox" class="keefoxState actionRequired">It looks like you're not using Firefox to view this website. The power of KeeFox can only be unlocked by using the world's leading open-source browser so please download Firefox and try again. <a href="http://keefox.org">KeeFox</a> automatically fills usernames and passwords into your favourite websites to save you time. The passwords are securely stored in a separate program called KeePass Password Safe. By remembering just one password for your KeePass database you can then make all of your website passwords different and secure because you will not need to remember them anymore. So using KeeFox will save you time and keep your online accounts more secure!</div>
+	<div id="keefoxState-firefox-old" class="keefoxState actionRequired">Your Firefox is too old. It is important that you upgrade to the latest version to ensure you can browse the internet safely. Once you've upgraded, come back here to try the KeeFox tutorial. <a href="http://keefox.org">KeeFox</a> automatically fills usernames and passwords into your favourite websites to save you time. The passwords are securely stored in a separate program called KeePass Password Safe. By remembering just one password for your KeePass database you can then make all of your website passwords different and secure because you will not need to remember them anymore. So using KeeFox will save you time and keep your online accounts more secure!</div>
+	<div id="keefoxState-not-keefox" class="keefoxState actionRequired">We can't detect KeeFox on your computer. Please install the latest version and restart Firefox to get setup with the best open-source password manager.<br/><br/>
+
+  This message might also mean that you are running an old version of KeeFox so please upgrade to KeeFox 1.5 or higher.<br/><br/>
+
+	<a href="http://keefox.org">KeeFox</a> automatically fills usernames and passwords into your favourite websites to save you time. The passwords are securely stored in a separate program called KeePass Password Safe. By remembering just one password for your KeePass database you can then make all of your website passwords different and secure because you will not need to remember them anymore. So using KeeFox will save you time and keep your online accounts more secure!</div>
+		<div id="keefoxState-not-keepass" class="keefoxState actionRequired">KeeFox stores your passwords in a secure separate password manager called KeePass Password Safe 2. It's full of great features but KeeFox keeps your everyday internet login tasks simple.<br/><br/>
+
+		It looks like KeePass is not installed on your computer but you can easily download and install it yourself or use the KeeFox setup page to help (click on the main KeeFox button and then the "Install KeeFox" button).</div>
+		<div id="keefoxState-not-kprpc" class="keefoxState actionRequired">There is a final part that is missing from your KeeFox setup but the special setup page can help you to get up and running quickly (click on the main KeeFox button and then the "Install KeeFox" button).</div>
+		<div id="keefoxState-not-connected" class="keefoxState actionRequired">KeeFox stores your passwords in a secure separate password manager called KeePass Password Safe 2. You need to run KeePass so that KeeFox can connect to it.<br/><br/>
+
+		If KeePass is already running but KeeFox has not connected to it, other security software on your computer is the most likely cause of the problem but it is usually possible to change a setting in that software so that it allows KeeFox to work.<br/><br/>
+
+		You can find more detailed <a href="https://github.com/luckyrat/KeeFox/wiki/en-%7C-Troubleshooting">troubleshooting advice in the manual</a>.</div>
+		<div id="keefoxState-logged-out" class="keefoxState actionRequired">You need to log in to your password database before this tutorial will work. Reload this page once you have entered your master password.</div>
+		<div id="keefoxState-samples-missing" class="keefoxState actionRequired">You can use any KeePass database for this tutorial but you need to make sure that the KeeFox sample entries are included somewhere in the database. To add the KeeFox sample entries you need to use the KeePass "Tools" menu and click on "Insert KeeFox tutorial samples".</div>
+
+{{ block "main" . }}{{ end }}
+
+</div>
+<div id="KeeFoxFooter"><a href="http://keefox.org">KeeFox homepage</a>. KeeFox development is hosted at <a href="https://github.com/luckyrat/keefox">github</a>.</div>
+
+	<script type="text/javascript">
+		document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
+			if (connectionTimeout)
+				clearTimeout(connectionTimeout);
+			$("#keefoxState-connecting").hide();
+
+			var state = document.getElementsByTagName("KeeFoxAddonStateTransferElement")[0].getAttribute("state");
+			var data = JSON.parse(state);
+
+			//TODO: check for lots more problems
+			// "connectState": "connected","previouslyConnected","neverConnected", "setupState": "kprpc","keepass","none", "setupActive": true, false, "version": "addon version string", "dbState": "none","ok","noSamples"
+			if (data.connectState != "connected") {
+				if (data.setupState == "kprpc")
+					$("#keefoxState-not-connected").show();
+				else if (data.setupState == "keepass")
+					$("#keefoxState-not-kprpc").show();
+				else
+					$("#keefoxState-not-keepass").show();
+			}
+			else if (data.dbState == "none")
+				$("#keefoxState-logged-out").show();
+			else if (data.dbState == "noSamples")
+				$("#keefoxState-samples-missing").show();
+			// else everything is awesome
+
+	}, false);
+	</script>
+</body>
+</html>
