@@ -1,0 +1,4 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Kee browser addon tutorial"
+theme = "tutorial"
