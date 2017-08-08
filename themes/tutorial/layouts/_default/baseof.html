@@ -20,9 +20,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
     <link href='{{ "css/tutorial20.css" | absURL }}' rel='stylesheet' type="text/css" />
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    
     <script type="text/javascript">window.liveSettings={api_key:"0b84313a5cda4e8094f8020cc21d327a"}</script>
     <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
 
@@ -39,6 +36,19 @@
 
 <script type="text/javascript">//<![CDATA[
    document.write('<style type="text/css" title="default">.helpDetail, .helpLink, .keefoxState, .jsDisabled { display: none; }</style>');
+
+  var connectionTimeout;
+
+  window.addEventListener("DOMContentLoaded", function(){
+    
+    document.getElementById("keefoxState-connecting").style.display = "block";
+    connectionTimeout = setTimeout(function() {
+      document.getElementById("keefoxState-connecting").style.display = "none";
+      document.getElementById("keefoxState-not-keefox").style.display = "block";
+    }, 5000);
+
+  });
+
    //]]></script>
 
       {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
@@ -48,7 +58,7 @@
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-11743867-3', 'keefox.org', {'siteSpeedSampleRate': 50});
+          ga('create', 'UA-11743867-3', 'kee.pm', {'siteSpeedSampleRate': 50});
           ga('send', 'pageview');
         </script>
       {{ end }}
@@ -57,28 +67,24 @@
   <body id="body">
     <div id="container">
 
-	<div id="keefoxState-jsDisabled" class="jsDisabled">Javascript disabled. This website might work without Javascript but it will be pretty useless in many cases and probably just cause you to waste time unecessarilly so please enable Javascript and reload before proceding.</div>
-	<div id="keefoxState-connecting" class="keefoxState">Connecting to KeeFox. Please wait...</div>
-	<div id="keefoxState-not-firefox" class="keefoxState actionRequired">It looks like you're not using Firefox to view this website. The power of KeeFox can only be unlocked by using the world's leading open-source browser so please download Firefox and try again. <a href="http://keefox.org">KeeFox</a> automatically fills usernames and passwords into your favourite websites to save you time. The passwords are securely stored in a separate program called KeePass Password Safe. By remembering just one password for your KeePass database you can then make all of your website passwords different and secure because you will not need to remember them anymore. So using KeeFox will save you time and keep your online accounts more secure!</div>
-	<div id="keefoxState-firefox-old" class="keefoxState actionRequired">Your Firefox is too old. It is important that you upgrade to the latest version to ensure you can browse the internet safely. Once you've upgraded, come back here to try the KeeFox tutorial. <a href="http://keefox.org">KeeFox</a> automatically fills usernames and passwords into your favourite websites to save you time. The passwords are securely stored in a separate program called KeePass Password Safe. By remembering just one password for your KeePass database you can then make all of your website passwords different and secure because you will not need to remember them anymore. So using KeeFox will save you time and keep your online accounts more secure!</div>
-	<div id="keefoxState-not-keefox" class="keefoxState actionRequired">We can't detect KeeFox on your computer. Please install the latest version and restart Firefox to get setup with the best open-source password manager.<br/><br/>
+  <div id="keefoxState-jsDisabled" class="jsDisabled">Please enable Javascript and reload before proceding.</div>
+  
+  <div id="keefoxState-connecting" class="keefoxState">Connecting to Kee. Please wait...</div>
+    
+	<div id="keefoxState-not-keefox" class="keefoxState actionRequired">It looks like you don't have Kee installed in your web browser.<br/><br/>
+  <a href="https://www.kee.pm">Kee</a> automatically fills usernames and passwords into your favourite websites to save you time. By remembering just one password for your password database you can then make all of your individual website passwords different and more secure because you will not need to remember them anymore. So using Kee will save you time and keep your online accounts more secure!<br/><br/>
+  This message might also mean that you are running an old version of Kee or it's predecessor KeeFox so please upgrade to Kee 2.0 or higher.</div>
 
-  This message might also mean that you are running an old version of KeeFox so please upgrade to KeeFox 1.5 or higher.<br/><br/>
-
-	<a href="http://keefox.org">KeeFox</a> automatically fills usernames and passwords into your favourite websites to save you time. The passwords are securely stored in a separate program called KeePass Password Safe. By remembering just one password for your KeePass database you can then make all of your website passwords different and secure because you will not need to remember them anymore. So using KeeFox will save you time and keep your online accounts more secure!</div>
-		<div id="keefoxState-not-keepass" class="keefoxState actionRequired">KeeFox stores your passwords in a secure separate password manager called KeePass Password Safe 2. It's full of great features but KeeFox keeps your everyday internet login tasks simple.<br/><br/>
-
-		It looks like KeePass is not installed on your computer but you can easily download and install it yourself or use the KeeFox setup page to help (click on the main KeeFox button and then the "Install KeeFox" button).</div>
-		<div id="keefoxState-not-kprpc" class="keefoxState actionRequired">There is a final part that is missing from your KeeFox setup but the special setup page can help you to get up and running quickly (click on the main KeeFox button and then the "Install KeeFox" button).</div>
-		<div id="keefoxState-not-connected" class="keefoxState actionRequired">KeeFox stores your passwords in a secure separate password manager called KeePass Password Safe 2. You need to run KeePass so that KeeFox can connect to it.<br/><br/>
-
-		If KeePass is already running but KeeFox has not connected to it, other security software on your computer is the most likely cause of the problem but it is usually possible to change a setting in that software so that it allows KeeFox to work.<br/><br/>
-
-		You can find more detailed <a href="https://github.com/luckyrat/KeeFox/wiki/en-%7C-Troubleshooting">troubleshooting advice in the manual</a>.</div>
-		<div id="keefoxState-logged-out" class="keefoxState actionRequired">You need to log in to your password database before this tutorial will work. Reload this page once you have entered your master password.</div>
-		<div id="keefoxState-samples-missing" class="keefoxState actionRequired">You can use any KeePass database for this tutorial but you need to make sure that the KeeFox sample entries are included somewhere in the database. To add the KeeFox sample entries you need to use the KeePass "Tools" menu and click on "Insert KeeFox tutorial samples".</div>
-
-    <h1 style="margin-left:-48px;"><img width="48" height="48" src='{{ "images/KeeFox48.png" | absURL }}' alt="Kee icon" style="vertical-align:middle;padding-bottom:4px;" /> Kee tutorial</h1>
+  <div id="keefoxState-not-connected" class="keefoxState actionRequired">Kee stores your passwords in a secure separate password manager called KeePass Password Safe 2. It's full of great features but Kee keeps your everyday internet login tasks simple.<br/><br/>
+  You need to run KeePass so that Kee can connect to it.<br/><br/>
+  If KeePass is not installed on your computer, you can easily download and install it yourself.<br/><br/>
+  You'll need to install the KeePassRPC.plgx plugin for KeePass too, if you haven't already.<br/><br/>
+  If KeePass is already running but Kee has not connected to it, other security software on your computer is the most likely cause of the problem but it is usually possible to change a setting in that software so that it allows Kee to work.<br/><br/>
+  You can find more detailed <a href="https://github.com/luckyrat/KeeFox/wiki/en-%7C-Troubleshooting">troubleshooting advice in the manual</a>.</div>
+    
+  <div id="keefoxState-logged-out" class="keefoxState actionRequired">You need to log in to your password database before this tutorial will work. Reload this page once you have entered your master password.</div>
+    
+  <h1 style="margin-left:-48px;"><img width="48" height="48" src='{{ "images/KeeFox48.png" | absURL }}' alt="Kee icon" style="vertical-align:middle;padding-bottom:4px;" /> Kee tutorial</h1>
 		
 {{ block "main" . }}{{ end }}
 
@@ -89,25 +95,16 @@
 		document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
 			if (connectionTimeout)
 				clearTimeout(connectionTimeout);
-			$("#keefoxState-connecting").hide();
+			document.getElementById("keefoxState-connecting").style.display = "none";
 
 			var state = document.getElementsByTagName("KeeFoxAddonStateTransferElement")[0].getAttribute("state");
 			var data = JSON.parse(state);
 
-			//TODO: check for lots more problems
-			// "connectState": "connected","previouslyConnected","neverConnected", "setupState": "kprpc","keepass","none", "setupActive": true, false, "version": "addon version string", "dbState": "none","ok","noSamples"
-			if (data.connectState != "connected") {
-				if (data.setupState == "kprpc")
-					$("#keefoxState-not-connected").show();
-				else if (data.setupState == "keepass")
-					$("#keefoxState-not-kprpc").show();
-				else
-					$("#keefoxState-not-keepass").show();
-			}
-			else if (data.dbState == "none")
-				$("#keefoxState-logged-out").show();
-			else if (data.dbState == "noSamples")
-				$("#keefoxState-samples-missing").show();
+			if (!data.connected) {
+        document.getElementById("keefoxState-not-connected").style.display = "block";
+      } else if (!data.dbLoaded) {
+        document.getElementById("keefoxState-logged-out").style.display = "block";
+      }
 			// else everything is awesome
 
 	}, false);
