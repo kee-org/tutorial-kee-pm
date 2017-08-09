@@ -12,7 +12,7 @@
 <p>Save the login entry and then press the "Complete step 2" button.</p>
 </div>
 
-<form action="/step3/" method="post"><br/>
+<form action="/step3" method="post"><br/>
   <input type="submit" value="Complete step 2"/>
 </form>
 

@@ -13,6 +13,6 @@
 <p>Update the login entry and then press the "Complete step 4" button.</p>
 </div>
 
-<form action="/step5/" method="post"><br/>
+<form action="/step5" method="post"><br/>
     <input type="submit" value="Complete step 4"/>
 </form>
