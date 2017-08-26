@@ -1,0 +1,204 @@
+.warning, .error
+{
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 50px;
+  margin:5px 0px;
+  text-align: center;
+  font-weight: bold;
+  	border:1px red solid;
+  	background: #ffdddd;
+}
+
+body {
+/*background: #abcde9;*/
+/*background: #e3e9ff;*/
+/*background: #dce2e8;*/
+  /*background: #e3e9ef;*/
+  background: #ffffff;
+/*background: #eeeeee;*/
+color:#444444;
+font-family:tahoma,arial,sans-serif;
+margin:0;
+padding:0;
+text-align:center;
+}
+a:link, a:visited, a:active {
+color:#D8610F;
+font-weight:bold;
+text-decoration:underline !important;
+}
+a:hover {
+color:#284898;
+font-weight:bold;
+text-decoration:underline;
+}
+ul, ol, dl, p, h1, h2, h3, h4, h5, h6 {
+margin-bottom:10px;
+margin-top:10px;
+padding-bottom:0;
+padding-top:0;
+}
+ul ul, ul ol, ol ul, ol ol {
+margin-bottom:0;
+margin-top:0;
+}
+ol.prereqs li
+{
+font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6 {
+color:#000000;
+display:block;
+}
+
+h1, h2 {
+color:#284898;
+text-align:center;
+}
+
+h1 {
+font-size:3em;
+line-height:1.2;
+margin:0.3em 0 10px;
+	letter-spacing:-0.04em;
+}
+h2 {
+font-size:2.2em;
+line-height:1.3;
+margin:0.6em 0 0.2em;
+color:#d8610f;
+}
+h3 {
+font-size:24px;
+line-height:1.3;
+margin:1em 0 0.2em;
+}
+
+
+hr {
+background-color:#CCCCCC;
+border:medium none;
+color:#CCCCCC;
+display:block;
+height:2px;
+margin:0.5em auto;
+}
+
+#container {
+color:#444444;
+display:block;
+margin:auto;
+padding:10px;
+text-align:left;
+max-width: 900px;
+}
+
+#KeeFoxFooter {
+	border-top: solid #C6D8F8 2px;
+  margin-bottom: 20px;
+}
+
+fieldset {
+border:1px solid #CCCCCC;
+display:block;
+padding:0.35em 0.625em 0.75em;
+width:auto;
+}
+
+legend {
+background:none repeat scroll 0 0 #F4F4F4;
+border:1px solid #CCCCCC;
+color:#000000;
+margin-bottom:15px;
+padding:2px 6px;
+}
+
+form p {
+margin:5px 0 0;
+padding:0;
+color:#217d2e;
+}
+
+label {
+cursor:pointer;
+font-family:arial;
+margin-right:0.5em;
+color:#217d2e;
+}
+
+input.text, input.textbox, input.password, input.file, input.TextField, textarea {
+background:url("http://keefox.org/wp-content/themes/atahualpa/images/inputbackgr.gif") no-repeat scroll left top transparent;
+border-color:#333333 #999999 #CCCCCC #333333;
+border-style:solid;
+border-width:1px;
+color:#000000;
+padding:3px;
+}
+
+img {
+border:0 none;
+}
+
+input[type="submit"] {
+background: #bce2c2;
+color:#d8610f;
+font-weight:bold;
+margin:15px 0;
+min-width:100px;
+padding:7px 10px;
+}
+
+input[type="submit"]:hover {
+background: #217d2e;
+}
+
+
+.instruction {
+	border:1px #217d2e solid;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+	background:#bce2c2 url(images/green-arrow-sm.png) 5px 8px no-repeat;
+	padding: 0px 10px 5px 50px;
+	min-height: 50px;
+	margin:5px 0px;
+  font-weight: bold;
+}
+
+.info {
+	border:1px #284898 solid;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+  background: #e3e9ff url(images/arrow-right-sm.png) 5px 8px no-repeat;
+	padding: 0px 10px 5px 50px;
+	min-height: 50px;
+	margin:5px 0px;
+}
+
+.keefoxState {
+	border:1px #d8610f solid;
+	-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+  background: #C6D8F8;
+	padding: 10px;
+	min-height: 50px;
+	margin:5px 0px;
+text-align: center;
+font-weight: bold;
+}
+
+.actionRequired:before {
+	content:"Action Required: ";
+	font-weight: bold;
+	color: #ff0000;
+}
+
+.actionRequired {
+	border:1px red solid;
+	background: #ffdddd;
+}

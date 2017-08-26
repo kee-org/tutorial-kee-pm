@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{ $.Site.LanguageCode | default "en" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
+    <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Title }} | {{ . }}{{ end }}{{ end }}</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+     {{ .Hugo.Generator }}
+      {{/* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */}}
+      {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+      {{ else }}
+        <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      {{ end }}
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+    <link href='{{ "css/tutorial20.css" | absURL }}' rel='stylesheet' type="text/css" />
+
+    <script type="text/javascript">window.liveSettings={api_key:"0b84313a5cda4e8094f8020cc21d327a"}</script>
+    <script type="text/javascript" src="//cdn.transifex.com/live.js"></script>
+
+     {{ if .RSSLink }}
+      <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+      <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+      {{ end }}
+
+      {{/* NOTE: These Hugo Internal Templates can be found starting at https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L158 */}}
+      {{- template "_internal/opengraph.html" . -}}
+      {{- template "_internal/google_news.html" . -}}
+      {{- template "_internal/schema.html" . -}}
+      {{- template "_internal/twitter_cards.html" . -}}
+
+<script type="text/javascript">//<![CDATA[
+   document.write('<style type="text/css" title="default">.helpDetail, .helpLink, .keefoxState, .jsDisabled { display: none; }</style>');
+
+  var connectionTimeout;
+
+  window.addEventListener("DOMContentLoaded", function(){
+    
+    document.getElementById("keefoxState-connecting").style.display = "block";
+    connectionTimeout = setTimeout(function() {
+      document.getElementById("keefoxState-connecting").style.display = "none";
+      document.getElementById("keefoxState-not-keefox").style.display = "block";
+    }, 5000);
+
+  });
+
+   //]]></script>
+
+      {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+          ga('create', 'UA-11743867-3', 'kee.pm', {'siteSpeedSampleRate': 50});
+          ga('send', 'pageview');
+        </script>
+      {{ end }}
+  </head>
+
+  <body id="body">
+    <div id="container">
+
+  <div id="keefoxState-jsDisabled" class="jsDisabled">Please enable Javascript and reload before proceding.</div>
+  
+  <div id="keefoxState-connecting" class="keefoxState">Connecting to Kee. Please wait...</div>
+    
+	<div id="keefoxState-not-keefox" class="keefoxState actionRequired">It looks like you don't have Kee installed in your web browser.<br/><br/>
+  <a href="https://www.kee.pm">Kee</a> automatically fills usernames and passwords into your favourite websites to save you time. By remembering just one password for your password database you can then make all of your individual website passwords different and more secure because you will not need to remember them anymore. So using Kee will save you time and keep your online accounts more secure!<br/><br/>
+  This message might also mean that you are running an old version of Kee or it's predecessor KeeFox so please upgrade to Kee 2.0 or higher.</div>
+
+  <div id="keefoxState-not-connected" class="keefoxState actionRequired">Kee stores your passwords in a secure separate password manager called KeePass Password Safe 2. It's full of great features but Kee keeps your everyday internet login tasks simple.<br/><br/>
+  You need to run KeePass so that Kee can connect to it.<br/><br/>
+  If KeePass is not installed on your computer, you can easily download and install it yourself.<br/><br/>
+  You'll need to install the KeePassRPC.plgx plugin for KeePass too, if you haven't already.<br/><br/>
+  If KeePass is already running but Kee has not connected to it, other security software on your computer is the most likely cause of the problem but it is usually possible to change a setting in that software so that it allows Kee to work.<br/><br/>
+  You can find more detailed <a href="https://github.com/luckyrat/KeeFox/wiki/en-%7C-Troubleshooting">troubleshooting advice in the manual</a>.</div>
+    
+  <div id="keefoxState-logged-out" class="keefoxState actionRequired">You need to log in to your password database before this tutorial will work. Reload this page once you have entered your master password.</div>
+    
+  <h1 style="margin-left:-48px;"><img width="48" height="48" src='{{ "images/KeeFox48.png" | absURL }}' alt="Kee icon" style="vertical-align:middle;padding-bottom:4px;" /> Kee tutorial</h1>
+		
+{{ block "main" . }}{{ end }}
+
+</div>
+<div id="KeeFoxFooter"><a href="http://keefox.org">Kee</a> was previously known as KeeFox. Kee development is hosted at <a href="https://github.com/kee-org/browser-addon">GitHub</a> - please get involved!</div>
+
+	<script type="text/javascript">
+		document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
+			if (connectionTimeout)
+				clearTimeout(connectionTimeout);
+			document.getElementById("keefoxState-connecting").style.display = "none";
+
+			var state = document.getElementsByTagName("KeeFoxAddonStateTransferElement")[0].getAttribute("state");
+			var data = JSON.parse(state);
+
+			if (!data.connected) {
+        document.getElementById("keefoxState-not-connected").style.display = "block";
+      } else if (!data.dbLoaded) {
+        document.getElementById("keefoxState-logged-out").style.display = "block";
+      }
+			// else everything is awesome
+
+	}, false);
+	</script>
+</body>
+</html>
