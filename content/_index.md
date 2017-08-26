@@ -9,7 +9,7 @@
 <p>Type a username and password into the boxes below and then press the "Complete step 1" button.</p>
 </div>
 
-<form action="/step2" method="post"><br/>
+<form action="/step2" method="get"><br/>
 	<label for="username">Username:</label><input type="text" name="username" id="username"/><br/>
 	<label for="password">Password:</label><input type="password" name="password" id="password"/><br/>
 	<input type="submit" value="Complete step 1"/>
