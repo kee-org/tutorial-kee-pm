@@ -2,7 +2,9 @@
 
 <h3>Step 2 of 5</h3>
 
-<p>The "Save password" dialog displayed on screen now will allow you to save the username and password you just typed.</p>
+<p>The "Save password" feature will allow you to save the username and password you just typed.</p>
+
+<p>Click the Kee button (logo) on your browser toolbar and select the "Save latest login" option.</p>
 
 <p>Please save it into your password database before proceeding.</p>
 

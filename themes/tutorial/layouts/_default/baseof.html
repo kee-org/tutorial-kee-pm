@@ -52,15 +52,16 @@
    //]]></script>
 
       {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108284341-3"></script>
         <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
 
-          ga('create', 'UA-11743867-3', 'kee.pm', {'siteSpeedSampleRate': 50});
-          ga('send', 'pageview');
+          gtag('config', 'UA-108284341-3');
         </script>
+
       {{ end }}
   </head>
 
@@ -80,10 +81,11 @@
 
   <div id="keefoxState-not-connected" class="keefoxState">
     <p class="actionRequired">Action required</p>
-    <p>Kee stores your passwords in a secure separate password manager called KeePass Password Safe 2. It's full of great features but Kee keeps your everyday internet login tasks simple.</p>
+    <p>Kee stores your passwords in a secure separate password manager called KeePass Password Safe 2. It's full of great features and Kee keeps your everyday internet login tasks simple.</p>
     <p>You need to run KeePass so that Kee can connect to it.</p>
     <p>If KeePass is not installed on your computer, you can easily download and install it yourself.</p>
     <p>You'll need to install the KeePassRPC.plgx plugin for KeePass too, if you haven't already.</p>
+    <p>Instructions for both above steps can be found on <a href="https://forum.kee.pm/t/installing-kee-instructions/23">our community forum</a></p>
     <p>If KeePass is already running but Kee has not connected to it, other security software on your computer is the most likely cause of the problem but it is usually possible to change a setting in that software so that it allows Kee to work.</p>
     <p>You can find more detailed <a href="https://github.com/luckyrat/KeeFox/wiki/en-%7C-Troubleshooting">troubleshooting advice in the manual</a>.</p>
 </div>
@@ -98,7 +100,7 @@
 {{ block "main" . }}{{ end }}
 
 </div>
-<div id="KeeFoxFooter"><a href="http://keefox.org">Kee</a> was previously known as KeeFox. Kee development is hosted at <a href="https://github.com/kee-org/browser-addon">GitHub</a> - please get involved!</div>
+<div id="KeeFoxFooter"><a href="https://www.kee.pm">Kee</a> was previously known as KeeFox. Kee development is hosted at <a href="https://github.com/kee-org/browser-addon">GitHub</a> - please get involved!</div>
 
 	<script type="text/javascript">
 		document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
