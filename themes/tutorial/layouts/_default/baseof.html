@@ -40,13 +40,9 @@
   var connectionTimeout;
 
   window.addEventListener("DOMContentLoaded", function(){
-    
-    document.getElementById("keefoxState-connecting").style.display = "block";
     connectionTimeout = setTimeout(function() {
-      document.getElementById("keefoxState-connecting").style.display = "none";
       document.getElementById("keefoxState-not-keefox").style.display = "block";
     }, 5000);
-
   });
 
    //]]></script>
@@ -70,8 +66,6 @@
 
   <div id="keefoxState-jsDisabled" class="jsDisabled">Please enable Javascript and reload before proceding.</div>
   
-  <div id="keefoxState-connecting" class="keefoxState">Connecting to Kee. Please wait...</div>
-    
 	<div id="keefoxState-not-keefox" class="keefoxState">
     <p class="actionRequired">Action required</p>
     <p>It looks like you don't have Kee installed in your web browser.</p>
@@ -106,7 +100,6 @@
 		document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
 			if (connectionTimeout)
 				clearTimeout(connectionTimeout);
-			document.getElementById("keefoxState-connecting").style.display = "none";
 
 			var state = document.getElementsByTagName("KeeFoxAddonStateTransferElement")[0].getAttribute("state");
 			var data = JSON.parse(state);
