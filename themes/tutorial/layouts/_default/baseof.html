@@ -48,17 +48,16 @@
     </script>
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-      <!-- Global site tag (gtag.js) - Google Analytics -->
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108284341-3"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108284341-3"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-        gtag('config', 'UA-108284341-3');
-      </script>
+      gtag('config', 'UA-108284341-3');
+    </script>
 
-    {{ end }}
     <!-- execute before matomo if we can so we can track the page view as quickly as
         possible (relies on extra network request to load rid iframe and
         then async postmessage comms with that) -->
@@ -109,6 +108,7 @@
       <p><img src="https://matomo.kee.pm/js/?idsite=2&amp;rec=1" style="border:0;" alt="" /></p>
     </noscript>
     <!-- End Matomo Code -->
+    {{ end }}
   </head>
 
   <body id="body">
