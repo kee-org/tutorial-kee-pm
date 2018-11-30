@@ -95,20 +95,43 @@
     <script type="text/javascript">
       var _paq = _paq || [];
 
+      window.piwikAsyncInit = function () {
+          try {
+              // This overrides the title for the single site tracker. It looks like
+              // this only works if the siteId is the "primary" site ID rather than
+              // one set through supplementary addTracker calls (in other words, it
+              // appears as though the siteId parameter passed to getAsyncTracker is
+              // actually ignored)
+              var singleTracker = Piwik.getAsyncTracker(null, 2);
+              singleTracker.setDocumentTitle(document.title);
+          } catch (err) {
+              console.error(err);
+          }
+      };
+
       (function () {
+        var strippedQueryStringUrl = function(url) {
+          var qsIndex = url.indexOf('?');
+          if (qsIndex < 0) {
+            return url;
+          } else {
+            return url.substring(0, qsIndex);
+          }
+        }
         var u = "https://matomo.kee.pm/js/";
         _paq.push(["disableCookies"]);
         _paq.push(['setTrackerUrl', u]);
         _paq.push(['setAPIUrl', u]);
         _paq.push(['setSiteId', '2']);
+        _paq.push(['addTracker', u, '6']);
         _paq.push(['discardHashTag', 'true']);
+        _paq.push(['setCustomUrl', strippedQueryStringUrl(location.href)]);
+        _paq.push(['setReferrerUrl', strippedQueryStringUrl(document.referrer)]);
+        _paq.push(['setDocumentTitle', document.domain + "/" + document.title]);
         var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
         g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u; s.parentNode.insertBefore(g, s);
       })();
     </script>
-    <noscript>
-      <p><img src="https://matomo.kee.pm/js/?idsite=2&amp;rec=1" style="border:0;" alt="" /></p>
-    </noscript>
     <!-- End Matomo Code -->
     {{ end }}
   </head>
@@ -165,5 +188,9 @@
 
 	}, false);
 	</script>
+  <noscript>
+    <p><img src="https://matomo.kee.pm/js/?idsite=2&amp;rec=1" style="border:0;" alt="" />
+      <img src="https://matomo.kee.pm/js/?idsite=6&amp;rec=1" style="border:0;" alt="" /></p>
+  </noscript>
 </body>
 </html>
