@@ -3,10 +3,10 @@
 
 <h3>Step 1 of 5</h3>
 
-<p>Kee will remember your login information so you don't have to.</p>
+<p>Kee will remember your sign in information so you don't have to.</p>
 
 <div class="instruction">
-<p>Type a username and password into the boxes below and then press the "Complete step 1" button.</p>
+<p>Type any (fake) username and password into the boxes below and then press the "Complete step 1" button.</p>
 </div>
 
 <form action="/step2" method="get"><br/>

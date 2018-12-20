@@ -2,16 +2,14 @@
 
 <h3>Step 2 of 5</h3>
 
-<p>The "Save password" feature will allow you to save the username and password you just typed.</p>
+<p>The "Save latest login" feature will allow you to save the username and password you just typed.</p>
 
-<p>Click the Kee button (logo) on your browser toolbar and select the "Save latest login" option.</p>
+<p>Click the Kee button (logo) on your browser toolbar and select "Save latest login" before proceeding.</p>
 
-<p>Please save it into your password database before proceeding.</p>
-
-<div class="info"><p>There are other ways to store a new password in Kee but filling in the details directly into the login form as you have just done is by far the easiest and almost always the correct approach. You can find more details in the manual.</p></div>
+<div class="info"><p>There are other ways to store a new password but filling in the details directly into the sign in form as you have just done is by far the easiest and almost always the correct approach.</p></div>
 
 <div class="instruction">
-<p>Save the login entry and then press the "Complete step 2" button.</p>
+<p>Save the entry and then press the "Complete step 2" button.</p>
 </div>
 
 <form action="/step3" method="get"><br/>
