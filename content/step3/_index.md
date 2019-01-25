@@ -5,20 +5,9 @@
 
 <p>Kee will monitor the web pages you load and will automatically fill sign in forms with your sign in details for the website. You can see your username and password have been filled into the form at the bottom of this page.</p>
 
-<div class="info"><p>Kee has many options to adjust this automatic form filling behaviour. You can change the behaviour for all or just some of your credentials and even block Kee from filling in forms in specific web pages if you have advanced requirements.</p></div>
+<div class="info"><p>Kee has many options to adjust this automatic form filling behaviour. You can change the behaviour for all or just some of your credentials and even block Kee from filling in forms in specific web pages if you have advanced requirements. You can also store more than one entry for each website if required.</p></div>
 
-<p>You can also store more than one entry for each website if required. However, for this tutorial, we will now modify the single entry that you just saved - something you'll need to do from time to time when changing the password used to sign into a website.</p>
-
-<p>A typical password change process follows this pattern:</p>
-<ol>
-	<li>Load the website's "change password" page</li>
-	<li>Ask Kee to generate a new secure password, paste it into the website's "new password" form field and save the change</li>
-	<li>Go to the website's sign in page (Kee will auto-fill it with the old password)</li>
-	<li>Paste the new password over the old one</li>
-	<li>Sign in to the website and then tell Kee to remember the change for next time</li>
-</ol>
-
-<p>There is no "change password" page for this tutorial website, so we'll use the sign in form below to give you a chance to use the two Kee features you'll need: Generating a new secure password and storing the updated information.</p>
+<p>Use the sign in form below to try out the two Kee features you'll need to change your password on a website: Generating a new secure password and storing the updated information.</p>
 
 <div class="instruction"><ol>
 	<li>Generate a new password using one of these methods:<ol style="list-style-type: lower-roman">
@@ -34,3 +23,14 @@
     <label for="password">Password:</label><input type="password" name="password" id="password"/><br/>
     <input type="submit" value="Complete step 3"/>
 </form>
+
+<h4>More information about changing website passwords</h4>
+
+<p>A typical password change process follows this pattern:</p>
+<ol>
+	<li>Load the website's "change password" page</li>
+	<li>Ask Kee to generate a new secure password, paste it into the website's "new password" form field and save the change</li>
+	<li>Go to the website's sign in page (Kee will auto-fill it with the old password)</li>
+	<li>Paste the new password over the old one</li>
+	<li>Sign in to the website and then tell Kee to remember the change for next time</li>
+</ol>
