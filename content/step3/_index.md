@@ -10,9 +10,10 @@
 <p>Use the sign in form below to try out the two Kee features you'll need to change your password on a website: Generating a new secure password and storing the updated information.</p>
 
 <div class="instruction"><ol>
-	<li>Generate a new password using one of these methods:<ol style="list-style-type: lower-roman">
-		<li>Click the "Generate new password" button on the Kee menu (click the Kee button on your toolbar)</li>
-		<li>Use the keyboard shortcut: Ctrl-Shift-4</li></ol></li>
+	<li>Generate a new password. Either:<ul style="list-style-type: lower-roman">
+		<li style="list-style-type:circle">Click the "Generate new password" button on the Kee menu (click the Kee button on your toolbar)</li>
+		<li style="list-style-type:none; font-size: 1.25em; padding-left:50px">OR</li>
+		<li style="list-style-type:circle">Use the keyboard shortcut: Ctrl-Shift-4</li></ul></li>
 	<li>Paste the new password into the password field below</li>
 	<li>Click "Complete step 3".</li>
     </ol>
