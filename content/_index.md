@@ -15,6 +15,6 @@
 	<input type="submit" value="Complete step 1"/>
 </form>
 
-<div class="info"><p>You can still go through the tutorial if you have made customisations to Kee options but some instructions might not make perfect sense.</p></div>
+<div class="info"><div><img src="/images/glasses-solid.svg" width="40" height="40"/></div><div><p>You can still go through the tutorial if you have made customisations to Kee options but some instructions might not make perfect sense.</p></div></div>
 
 <div>If you're having trouble and any advice at the top of the page is not helpful, you can find detailed <a href="https://github.com/luckyrat/KeeFox/wiki/en-%7C-Troubleshooting">troubleshooting advice in the manual</a>.</div>

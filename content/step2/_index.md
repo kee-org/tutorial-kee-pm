@@ -6,7 +6,7 @@
 
 <p>Click the Kee button (logo) on your browser toolbar and select "Save latest login" before proceeding.</p>
 
-<div class="info"><p>There are other ways to store a new password but filling in the details directly into the sign in form as you have just done is by far the easiest and almost always the correct approach.</p></div>
+<div class="info"><div><img src="/images/glasses-solid.svg" width="40" height="40"/></div><div><p>There are other ways to store a new password but filling in the details directly into the sign in form as you have just done is by far the easiest and almost always the correct approach.</p></div></div>
 
 <div class="instruction">
 <p>Save the entry and then press the "Complete step 2" button.</p>

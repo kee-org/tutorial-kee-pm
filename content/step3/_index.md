@@ -5,7 +5,7 @@
 
 <p>Kee will monitor the web pages you load and will automatically fill sign in forms with your sign in details for the website. You can see your username and password have been filled into the form at the bottom of this page.</p>
 
-<div class="info"><p>Kee has many options to adjust this automatic form filling behaviour. You can change the behaviour for all or just some of your credentials and even block Kee from filling in forms in specific web pages if you have advanced requirements. You can also store more than one entry for each website if required.</p></div>
+<div class="info"><div><img src="/images/glasses-solid.svg" width="40" height="40"/></div><div><p>Kee has many options to adjust this automatic form filling behaviour. You can change the behaviour for all or just some of your credentials and even block Kee from filling in forms in specific web pages if you have advanced requirements. You can also store more than one entry for each website if required.</p></div></div>
 
 <p>Use the sign in form below to try out the two Kee features you'll need to change your password on a website: Generating a new secure password and storing the updated information.</p>
 
