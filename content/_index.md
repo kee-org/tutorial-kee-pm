@@ -3,11 +3,13 @@
 
 <h3>Step 1 of 5</h3>
 
-<p>Kee will remember your sign in information so you don't have to.</p>
+<p>Kee will remember your sign-in information so you don't have to.</p>
 
 <div class="instruction">
-<p>Type any (fake) username and password into the boxes below and then press the "Complete step 1" button.</p>
+<p>Type <i>any</i> (fake) username and password into the boxes below and then press the "Complete step 1" button.</p>
 </div>
+
+<p>You do <b>not</b> have to remember what you type.</p>
 
 <form action="/step2" method="get"><br/>
 	<label for="username">Username:</label><input type="text" name="username" id="username"/><br/>
