@@ -53,5 +53,6 @@ checkTimer = setInterval(function () {
 checkTimerEnd = setTimeout(function () {
 	document.getElementById("stage2CheckPending").classList.add("hidden");
 	document.getElementById("stage2CheckFail").classList.remove("hidden");
+	clearInterval(checkTimer);
 }, 3000);
 </script>
