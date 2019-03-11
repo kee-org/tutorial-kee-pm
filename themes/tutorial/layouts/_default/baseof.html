@@ -34,6 +34,7 @@
       {{- template "_internal/schema.html" . -}}
       {{- template "_internal/twitter_cards.html" . -}}
 
+    <!-- PROTECTED BY CSP. Update hashes in netlify.toml if making changes -->
     <script type="text/javascript">
       document.write('<style type="text/css" title="default">.helpDetail, .helpLink, .keefoxState, .jsDisabled { display: none; }</style>');
 
@@ -48,19 +49,11 @@
     </script>
 
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108284341-3"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-108284341-3');
-    </script>
 
     <!-- execute before matomo if we can so we can track the page view as quickly as
         possible (relies on extra network request to load rid iframe and
         then async postmessage comms with that) -->
+    <!-- PROTECTED BY CSP. Update hashes in netlify.toml if making changes -->
     <script>
       var matomoInitialPageViewTracked = false;
       var onRandomIdRetrievedFromStorage = function (val) {
@@ -92,6 +85,7 @@
     <script async src='{{ "js/rid.js" | absURL }}'></script>
 
     <!-- Matomo -->
+    <!-- PROTECTED BY CSP. Update hashes in netlify.toml if making changes -->
     <script type="text/javascript">
       var _paq = _paq || [];
 
@@ -171,6 +165,8 @@
 </div>
 <div id="KeeFoxFooter"><a href="https://www.kee.pm">Kee</a> was previously known as KeeFox. Kee development is hosted at <a href="https://github.com/kee-org/browser-addon">GitHub</a> - please get involved!</div>
 
+
+  <!-- PROTECTED BY CSP. Update hashes in netlify.toml if making changes -->
 	<script type="text/javascript">
 		document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
 			if (connectionTimeout)
