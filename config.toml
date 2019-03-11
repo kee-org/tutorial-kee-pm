@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://tutorial-addon.kee.pm/"
 languageCode = "en-us"
 title = "Kee browser addon tutorial"
 theme = "tutorial"
