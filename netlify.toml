@@ -15,8 +15,13 @@
 [context.branch-deploy]
   command = "hugo --baseURL $DEPLOY_PRIME_URL"
 
+# Hugo (2019) doesn't allow per-environment absolute URLs (baseURL) in 
+# content (markdown) so we must load some content from the public
+# https://d33wubrfki0l68.cloudfront.net domain :-(
 [[headers]]
   for = "/*"
   [headers.values]
-  Content-Security-Policy = "frame-ancestors 'none'"
+  Content-Security-Policy = "default-src 'none'; script-src 'self' 'sha256-svElFNeOiX8mlTg19mFrsOtfgSqrrt+m5PRwpNsIgjE=' 'sha256-WL772tMdELUqvAXtkiPf93fpTZhacrqbAFwncj6xFdM=' 'sha256-yTj91RmX+1fw8Odek3Y7Ligw87MyM5bUok++SactJrU=' 'sha256-1Pwj9hbSkZS0R5bkDcWktduzbQtkvl6Ah6SSf4zoBbU=' 'sha256-2ulKA1SaHXH/ktno4Gyl+Bmf3E9mXeT1DqAP1+LxW0w=' 'sha256-0C7mBFjJJVH+U0RypUzYNpR1c0T887pGc8RrdEoDvGs=' https://cdn.transifex.com https://matomo.kee.pm/js/ 'sha256-UyAYEXxpLjYazOyRK+kMNHI+tYmcVuyPPBbsI1fDKK0='; connect-src 'self'; img-src 'self' data: https://matomo.kee.pm/js/ https://d33wubrfki0l68.cloudfront.net; style-src 'self' 'unsafe-inline' https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css; font-src 'self' https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/fonts/; frame-ancestors 'none'; child-src https://rid.kee.pm/; report-uri https://keevault.report-uri.com/r/d/csp/enforce"
   X-Frame-Options = "DENY"
+  X-Content-Type-Options = "nosniff"
+  X-Xss-Protection = "1; mode=block; report=https://keevault.report-uri.com/r/d/xss/enforce"
