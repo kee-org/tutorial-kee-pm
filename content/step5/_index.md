@@ -10,6 +10,7 @@
 
 <p>Kee development is hosted at <a href="https://github.com/kee-org/browser-addon">GitHub</a> - please get involved!</p>
 
+<!-- PROTECTED BY CSP. Update hashes in netlify.toml if making changes sha256-IUedM54au1WjwPpMH21oYpiOHS9kO3sR/FjCP8jehDg= -->
 <script type="text/javascript">
 document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
 
