@@ -16,8 +16,8 @@ Password: <i>1234</i></p>
 </div>
 
 <form action="/step2" method="get" id="login">
-	<label for="username">Username:</label><input type="text" name="username" id="username"/>
-	<label for="password">Password:</label><input type="password" name="password" id="password"/>
+	<label for="username">Username:</label><input type="text" name="username" id="username" autocomplete="off"/>
+	<label for="password">Password:</label><input type="password" name="password" id="password" autocomplete="off"/>
 	<input type="submit" value="Complete step 1"/>
 </form>
 
