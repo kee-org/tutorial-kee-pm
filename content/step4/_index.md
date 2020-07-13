@@ -19,8 +19,8 @@
 </div>
 
 <form action="/step5" method="get">
-    <label for="username">Username:</label><input type="text" name="username" id="username"/>
-    <label for="password">Current Password:</label><input type="password" name="password" id="password"/>
+    <label for="username">Username:</label><input type="text" name="username" id="username" autocomplete="off"/>
+    <label for="password">Current Password:</label><input type="password" name="password" id="password" autocomplete="off"/>
     <label for="password">New password:</label><input type="password" name="new-password1" id="new-password1" autocomplete="new-password"/>
     <label for="password">New password (Repeat):</label><input type="password" name="new-password2" id="new-password2" autocomplete="new-password"/>
     <input type="submit" value="Complete step 4"/>
