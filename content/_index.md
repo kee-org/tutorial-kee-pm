@@ -25,6 +25,7 @@ Password: <i>1234</i></p>
 
 <div>If you're having trouble and any advice at the top of the page is not helpful, you can find detailed <a href="https://forum.kee.pm/t/troubleshooting/560">troubleshooting advice in the manual</a>.</div>
 
+<!-- PROTECTED BY CSP. Update hashes in netlify.toml if making changes sha256-bNrMc4tnLK5q2mPW8opMyPq0Qbr87O40G14RsGdap8o= -->
 <script type="text/javascript">
 document.addEventListener("KeeFoxAddonStateTransferEvent", function(event) {
 
